@@ -9,8 +9,8 @@ import android.hardware.SensorManager
  * Created by rgaina on 02/12/2017.
  */
 class SensorHandler(context: Context) {
-    private var sensorManager: SensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-    private var proximity: Sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+    private val sensorManager: SensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+    private val proximity: Sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
 
     fun onResume(listener: SensorEventListener) {
         sensorManager.registerListener(listener, proximity, SensorManager.SENSOR_DELAY_NORMAL)
